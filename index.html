@@ -20,11 +20,12 @@
   @font-face{font-family:'Mona Sans';src:url('https://cdn.jsdelivr.net/fontsource/fonts/mona-sans:vf@latest/latin-wght-normal.woff2') format('woff2');font-weight:200 900;font-stretch:75% 125%;font-display:swap}
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --dk:#0A0A0A;--wh:#ffffff;--ylw:#EEFF00;--ylw-bg:rgba(238,255,0,0.08);
+    --dk:#1C3426;--wh:#ffffff;--ylw:#D3A573;--ylw-bg:rgba(211,165,115,0.10);
+    --crm:#F4EFE1;
     --g50:#fafafa;--g100:#f5f5f5;--g200:#e5e5e5;--g300:#d4d4d4;
     --g400:#a3a3a3;--g500:#737373;--g600:#525252;--g700:#404040;
-    --tx:#0A0A0A;--txm:#525252;--txl:#737373;
-    --r:16px;--sh:0 4px 24px rgba(0,0,0,0.08);--shl:0 12px 48px rgba(0,0,0,0.12);
+    --tx:#1C3426;--txm:#3d5a47;--txl:#5a7a64;
+    --r:16px;--sh:0 4px 24px rgba(28,52,38,0.08);--shl:0 12px 48px rgba(28,52,38,0.12);
   }
   body{font-family:'Mona Sans','Montserrat',sans-serif;background:#fff;color:var(--tx);overflow:hidden;height:100vh;width:100vw}
   .slide{display:none;width:100vw;height:100vh;padding:56px 72px;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
@@ -35,14 +36,14 @@
   .nb{width:44px;height:44px;border-radius:50%;border:1px solid var(--g200);background:#fff;color:var(--tx);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.06)}
   .nb:hover{background:var(--ylw);border-color:var(--ylw);color:var(--dk)}
   .ct{font-size:13px;color:var(--g500);font-weight:600;margin:0 8px;letter-spacing:1px}
-  body.dk .nb{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff}
+  body.dk .nb{background:rgba(244,239,225,.08);border-color:rgba(244,239,225,.15);color:var(--crm)}
   body.dk .nb:hover{background:var(--ylw);border-color:var(--ylw);color:var(--dk)}
-  body.dk .ct{color:rgba(255,255,255,.35)}
+  body.dk .ct{color:rgba(244,239,225,.35)}
   body.dk .wm{opacity:1}
   .progress{position:fixed;top:0;left:0;height:3px;background:var(--ylw);transition:width .4s ease;z-index:100}
   .wm{position:fixed;bottom:30px;left:36px;z-index:100}
   .wm-logo{height:16px;opacity:.3}
-  body.dk .wm-logo{filter:brightness(0) invert(1);opacity:.22}
+  body.dk .wm-logo{filter:brightness(0) invert(1) sepia(.15) saturate(.6);opacity:.22}
   h1{font-family:'Lora',serif;font-size:64px;font-weight:400;line-height:1.08;letter-spacing:-1.5px}
   h2{font-family:'Lora',serif;font-size:46px;font-weight:400;line-height:1.12;letter-spacing:-.5px;margin-bottom:12px}
   h3{font-size:22px;font-weight:700;margin-bottom:6px}
@@ -51,10 +52,10 @@
   p{font-size:18px;line-height:1.6;color:var(--txm)}
   .sub{font-size:21px;color:var(--txm);font-weight:400;margin-top:14px;line-height:1.55;max-width:600px}
   .pill{display:inline-block;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;background:var(--ylw);color:var(--dk);margin-bottom:14px}
-  .pill-dk{background:rgba(245,197,24,.15);color:var(--ylw)}
-  .s-dk p{color:rgba(255,255,255,.6)}
-  .s-dk .sub{color:rgba(255,255,255,.5)}
-  .s-dk .stl{color:rgba(255,255,255,.45)}
+  .pill-dk{background:rgba(211,165,115,.18);color:var(--ylw)}
+  .s-dk p{color:rgba(244,239,225,.65)}
+  .s-dk .sub{color:rgba(244,239,225,.55)}
+  .s-dk .stl{color:rgba(244,239,225,.5)}
   .g2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
   .g2ti{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center}
   .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
@@ -68,7 +69,8 @@
   .dt{width:8px;height:8px;border-radius:50%;background:var(--ylw);flex-shrink:0;margin-top:8px}
   .ft li span{color:var(--txm)}
   .sts{display:flex;gap:40px;margin-top:24px}
-  .stn{font-family:'Mona Sans','Montserrat',sans-serif;font-size:36px;font-weight:800}
+  .sts>div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+  .stn{font-family:'Mona Sans','Montserrat',sans-serif;font-size:36px;font-weight:800;min-height:44px;display:flex;align-items:flex-end;justify-content:center}
   .stl{font-size:14px;color:var(--txl);margin-top:2px;font-weight:500}
   .flow{display:flex;align-items:center;gap:8px;margin-top:18px;flex-wrap:wrap}
   .fl-i{background:var(--g100);border-radius:8px;padding:8px 16px;font-size:16px;font-weight:600;color:var(--txm)}
@@ -118,7 +120,7 @@
 <div class="wm"><img src="groupos-logo.svg" alt="GroupOS" class="wm-logo"></div>
 <div class="nav">
   <button class="nb" onclick="prev()">&#8592;</button>
-  <span class="ct" id="ct">1 / 17</span>
+  <span class="ct" id="ct">1 / 18</span>
   <button class="nb" onclick="next()">&#8594;</button>
 </div>
 
@@ -128,16 +130,16 @@
     <div>
       <img src="https://cdn.prod.website-files.com/691b85f2af2475f19556950e/695eb4be6e3ae7a67151e6d7_Logo-side-badge.avif" alt="Founders Club" style="height:56px;margin-bottom:20px;display:block;filter:brightness(0) invert(1)">
       <span class="pill pill-dk">BUILT FOR VETTED FOUNDER COMMUNITIES</span>
-      <h1 style="color:#fff"><b>Your Club.</b><br><b>Your App.</b><br>One Platform.</h1>
+      <h1 style="color:var(--crm)"><b>Your Club.</b><br><b>Your App.</b><br>One Platform.</h1>
       <p class="sub">GroupOS is a community management platform purpose-built for private membership networks, chapter-based communities, and high-caliber founder groups.</p>
       <div class="sts">
         <div><div class="stn" style="color:var(--ylw)">1</div><div class="stl">Single app for everything</div></div>
-        <div><div class="stn" style="color:var(--ylw);font-size:28px">iOS+Android</div><div class="stl">Native mobile apps</div></div>
+        <div><div class="stn" style="color:var(--ylw);gap:6px"><svg width="28" height="34" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span style="font-size:22px;font-weight:700">+</span><svg width="30" height="34" viewBox="0 0 576 512" fill="currentColor"><path d="M420.55 301.93a24 24 0 1 1 24-24 24 24 0 0 1-24 24m-265.1 0a24 24 0 1 1 24-24 24 24 0 0 1-24 24m273.7-144.48 47.94-83a10 10 0 1 0-17.27-10l-48.54 84.07a301 301 0 0 0-246.56 0L116.18 64.45a10 10 0 1 0-17.27 10l47.94 83C64.53 202.22 8.24 285.55 0 384h576c-8.24-98.45-64.54-181.78-146.85-226.55"/></svg></div><div class="stl">Native mobile apps</div></div>
         <div><div class="stn" style="color:var(--ylw)">100%</div><div class="stl">White-labeled</div></div>
       </div>
     </div>
     <div>
-      <img src="https://cdn.prod.website-files.com/673e4117f87b553a20b29eca/679d310dc7908524729da405_img-main-community.webp" alt="GroupOS branded community app" class="imh" style="border-radius:20px">
+      <img src="https://cdn.prod.website-files.com/691b85f2af2475f19556950e/69260e0c1a70f01c73520705_cdfeb67a301ac710890168e6cca488b5_event-founders-forum.avif.webp" alt="Founders Club event" class="imh" style="border-radius:20px">
     </div>
   </div>
 </div>
@@ -430,7 +432,47 @@
   </div>
 </div>
 
-<!-- ====== 16. TIMELINE ====== -->
+<!-- ====== 16. BRAND MATCH ====== -->
+<div class="slide s-dk">
+  <div class="g2ti" style="gap:40px">
+    <div>
+      <span class="pill pill-dk">FULLY CUSTOMIZED</span>
+      <h2 style="color:var(--crm);font-size:40px"><b>Your Brand,</b><br>Down to Every Pixel.</h2>
+      <p style="max-width:440px;font-size:16px;margin-bottom:8px">We don't do templates. We study your brand guidelines — fonts, colors, tone — and build your app to feel native to your identity.</p>
+      <ul class="ft" style="margin-top:8px">
+        <li style="padding:5px 0"><div class="dt"></div><span style="color:rgba(244,239,225,.7)"><strong style="color:var(--crm)">Your fonts</strong> — we match your exact typefaces across the entire app</span></li>
+        <li style="padding:5px 0"><div class="dt"></div><span style="color:rgba(244,239,225,.7)"><strong style="color:var(--ylw)">Your color palette</strong> — accent colors, backgrounds, and UI elements tuned to your brand</span></li>
+        <li style="padding:5px 0"><div class="dt"></div><span style="color:rgba(244,239,225,.7)"><strong style="color:var(--crm)">Your visual tone</strong> — warm, bold, minimal — whatever defines your community</span></li>
+        <li style="padding:5px 0"><div class="dt"></div><span style="color:rgba(244,239,225,.7)"><strong style="color:var(--crm)">This deck is proof</strong> — every slide you're seeing uses your brand, not ours</span></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+      <div style="background:rgba(244,239,225,.04);border:1px solid rgba(211,165,115,.2);border-radius:var(--r);padding:28px;width:100%">
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700;color:var(--ylw);margin-bottom:14px">Example — Your Palette</p>
+        <div style="display:flex;gap:10px;margin-bottom:20px">
+          <div style="flex:1;height:56px;border-radius:10px;background:#1C3426;border:1px solid rgba(244,239,225,.15)"></div>
+          <div style="flex:1;height:56px;border-radius:10px;background:#D3A573"></div>
+          <div style="flex:1;height:56px;border-radius:10px;background:#F4EFE1"></div>
+          <div style="flex:1;height:56px;border-radius:10px;background:#2d6e4a"></div>
+        </div>
+        <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700;color:var(--ylw);margin-bottom:10px">Example — Your Typography</p>
+        <div style="display:flex;gap:24px;align-items:baseline">
+          <div>
+            <p style="font-family:'Lora',serif;font-size:26px;color:var(--crm);font-weight:400">Theseasons</p>
+            <p style="font-size:13px;color:rgba(244,239,225,.4)">Headings · Serif</p>
+          </div>
+          <div>
+            <p style="font-size:20px;color:var(--crm);font-weight:400">Fakt Blond</p>
+            <p style="font-size:13px;color:rgba(244,239,225,.4)">Body · Sans-serif</p>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:rgba(244,239,225,.35);text-align:center;margin-top:4px">Colors and fonts in this deck pulled from foundersclubofficial.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====== 17. TIMELINE ====== -->
 <div class="slide s-wh">
   <span class="pill">GETTING STARTED</span>
   <h2><b>Launch in Weeks,</b> Not Months</h2>
@@ -467,21 +509,22 @@
   </div>
 </div>
 
-<!-- ====== 17. CTA ====== -->
+<!-- ====== 18. CTA ====== -->
 <div class="slide s-dk">
   <div class="cta-c">
     <img src="https://cdn.prod.website-files.com/691b85f2af2475f19556950e/695eb4be6e3ae7a67151e6d7_Logo-side-badge.avif" alt="Founders Club" style="height:56px;margin-bottom:36px;opacity:.9;filter:brightness(0) invert(1)">
-    <h1 style="color:#fff;max-width:720px;font-size:56px">Ready to Give Your Founders the App They Deserve?</h1>
+    <h1 style="color:var(--crm);max-width:720px;font-size:56px">Ready to Give Your Founders the App They Deserve?</h1>
     <p class="sub" style="max-width:560px;font-size:22px">Join the growing list of vetted founder communities who switched from scattered tools to one powerful platform.</p>
   </div>
+  <button onclick="show(0)" style="position:absolute;bottom:32px;left:0;right:0;margin:0 auto;background:rgba(244,239,225,.08);border:1px solid rgba(211,165,115,.25);border-radius:50%;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(211,165,115,.15)'" onmouseout="this.style.background='rgba(244,239,225,.08)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ylw)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></button>
 </div>
 
 <script>
   let c=0;
   const sl=document.querySelectorAll('.slide'),t=sl.length;
   function show(n){
-    sl[c].classList.remove('active');
-    c=(n+t)%t;
+    if(n<0||n>=t)return;
+    sl[c].classList.remove('active');c=n;
     sl[c].classList.add('active');
     document.getElementById('ct').textContent=(c+1)+' / '+t;
     document.getElementById('progress').style.width=((c+1)/t*100)+'%';
